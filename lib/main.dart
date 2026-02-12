@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/widgets_layout_demo.dart';
 // Import the second file so we can navigate to it
 import 'dart_demo_screen.dart';
 
@@ -51,7 +52,7 @@ class HomeScreen extends StatelessWidget {
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const DartDemoScreen()),
+                MaterialPageRoute(builder: (context) => const WidgetsLayoutDemo()),
               );
             },
           ),
