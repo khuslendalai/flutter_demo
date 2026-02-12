@@ -44,6 +44,17 @@ class HomeScreen extends StatelessWidget {
               );
             },
           ),
+
+          ListTile(
+            title: const Text("2. Widgets and Layout"),
+            leading: const Icon(Icons.code), 
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const DartDemoScreen()),
+              );
+            },
+          ),
         ],
       ),
     );

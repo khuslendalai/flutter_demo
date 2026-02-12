@@ -19,7 +19,9 @@ class DartDemoScreen extends StatelessWidget {
             // so the Center widget can do its job vertically
             mainAxisSize: MainAxisSize.min,
             children: [
-              ElevatedButton(onPressed: () {}, child: const Text("Button 1")),
+              ElevatedButton(onPressed: () {
+                print("Hello World");
+              }, child: const Text("Hello World")),
               const SizedBox(height: 10), // Spacing between buttons
               ElevatedButton(onPressed: () {}, child: const Text("Button 2")),
               const SizedBox(height: 10),
