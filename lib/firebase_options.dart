@@ -9,7 +9,7 @@ import 'package:flutter/foundation.dart'
 /// Example:
 /// ```dart
 /// import 'firebase_options.dart';
-/// // ...
+/// // ...git 
 /// await Firebase.initializeApp(
 ///   options: DefaultFirebaseOptions.currentPlatform,
 /// );
@@ -85,4 +85,5 @@ class DefaultFirebaseOptions {
     storageBucket: 'wteams-c478f.firebasestorage.app',
     measurementId: 'G-L1XMQHXR6K',
   );
+
 }

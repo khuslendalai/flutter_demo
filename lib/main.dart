@@ -5,11 +5,19 @@ import 'package:flutter_demo/ui/2_widget_layout/widgets_layout_demo.dart';
 import 'package:flutter_demo/ui/3_state_managment/state_management_demo.dart';
 import 'package:flutter_demo/ui/4_user_login/login_screen.dart';
 import 'ui/1_dart/dart_demo_screen.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
-Future<void> main() async {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
   setupServiceLocator();
   await getIt<LocalStorage>().init();
+
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+
   runApp(const MyApp());
 }
 
