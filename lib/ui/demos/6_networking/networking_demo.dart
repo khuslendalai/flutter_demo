@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_demo/ui/demos/6_networking/networking_manager.dart';
 
 class NetworkingDemo extends StatefulWidget {
   const NetworkingDemo({super.key});
@@ -8,23 +9,39 @@ class NetworkingDemo extends StatefulWidget {
 }
 
 class _NetworkingDemoState extends State<NetworkingDemo> {
-  final networkingManager = NetworkingManager();
+  final manager = NetworkingManager();
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(appBar: AppBar(), body: Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children:[
-        ElevatedButton(onPressed: () {}, child: const Text('GET'),),
-        const SizedBox(height: 20),
-        ElevatedButton(onPressed: () {}, child: const Text('POST'),),
-      ],
-    ))
-  );
+    return Scaffold(
+      appBar: AppBar(),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ValueListenableBuilder(
+              valueListenable: manager.catNotifier,
+              builder: (context, catFacts, child) {
+                return Text(catFacts, textAlign: TextAlign.center);
+              },
+            ),
+            const SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                manager.getRequest();
+              },
+              child: Text('GET'),
+            ),
+            const SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                manager.postRequest();
+              },
+              child: Text('POST'),
+            ),
+          ],
+        ),
+      ),
+    );
   }
-}
-
-class NetworkingManager {
-  Future<void> get() async {}
-  Future<void> post() async {}
 }

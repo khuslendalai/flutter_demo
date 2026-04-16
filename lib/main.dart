@@ -6,6 +6,10 @@ import 'package:flutter_demo/theme.dart';
 import 'package:flutter_demo/ui/demos/2_widget_layout/widgets_layout_demo.dart';
 import 'package:flutter_demo/ui/demos/3_state_managment/state_management_demo.dart';
 import 'package:flutter_demo/ui/demos/5_sqlite/database.dart';
+import 'package:flutter_demo/ui/demos/5_sqlite/sqlite_demo.dart';
+import 'package:flutter_demo/ui/demos/6_networking/networking_demo.dart';
+import 'package:flutter_demo/ui/demos/7_testing/calculator_demo.dart';
+import 'package:flutter_demo/ui/demos/8_profiling/profiling_demo.dart';
 import 'package:flutter_demo/ui/settings/settings_screen.dart';
 import 'ui/demos/1_dart/dart_demo_screen.dart';
 
@@ -14,7 +18,7 @@ Future<void> main() async {
   setupServiceLocator();
   await getIt<LocalStorage>().init();
   await getIt<AppState>().init();
-  await getIt<DatabaseHelper>().init();
+  //await getIt<DatabaseHelper>().init();
   runApp(const MyApp());
 }
 
@@ -112,6 +116,50 @@ class HomeScreen extends StatelessWidget {
                 MaterialPageRoute(
                   builder: (context) => const StateManagementDemo(),
                 ),
+              );
+            },
+          ),
+
+          ListTile(
+            title: const Text("5. SQLite"),
+            leading: const Icon(Icons.code),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const SqliteDemo()),
+              );
+            },
+          ),
+
+          ListTile(
+            title: const Text("6. Networking"),
+            leading: const Icon(Icons.code),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const NetworkingDemo()),
+              );
+            },
+          ),
+
+          ListTile(
+            title: const Text("7. Testing"),
+            leading: const Icon(Icons.code),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const CalculatorDemo()),
+              );
+            },
+          ),
+
+          ListTile(
+            title: const Text("8. Profiling"),
+            leading: const Icon(Icons.code),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const ProfilingDemo()),
               );
             },
           ),
