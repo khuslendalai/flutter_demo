@@ -43,8 +43,9 @@ class MyPainter extends CustomPainter {
   void paint(Canvas canvas, Size size) {
     final path = Path()
       ..moveTo(50, 50)
-      ..lineTo(200, 200)
-      ..quadraticBezierTo(200, 20, 150, 100);
+      //..lineTo(200, 200)
+      ..quadraticBezierTo(30, 150, 150, 100)
+      ..quadraticBezierTo(30, 150, 240, 150);
     final paint = Paint()
       ..color = Colors.black
       ..style = PaintingStyle.stroke
