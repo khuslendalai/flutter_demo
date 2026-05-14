@@ -1,7 +1,7 @@
 name: flutter_demo
 description: "A new Flutter project."
 publish_to: 'none' 
-version: 1.0.0+1
+version: 1.0.1+2
 
 environment:
   sdk: ^3.10.7
@@ -18,7 +18,7 @@ dependencies:
   path_provider: ^2.1.5
   path: ^1.9.1
   http: ^1.6.0
-  
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
