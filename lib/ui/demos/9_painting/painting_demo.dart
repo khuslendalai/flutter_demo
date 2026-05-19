@@ -18,22 +18,22 @@ class _PaintingDemoState extends State<PaintingDemo> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(),
-      body: Center(
-        child: Container(
-          // color: Colors.cyan,
-          child: ProgressBar(
-            barColor: Colors.blue,
-            thumbColor: Colors.red,
-            thumbSize: 20.0,
-          ),
-        ),
-      ),
       // body: Center(
       //   child: Container(
-      //     decoration: BoxDecoration(border: Border.all(color: Colors.grey)),
-      //     child: CustomPaint(size: Size(300, 300), painter: MyPainter()),
+      //     // color: Colors.cyan,
+      //     child: ProgressBar(
+      //       barColor: Colors.blue,
+      //       thumbColor: Colors.red,
+      //       thumbSize: 20.0,
+      //     ),
       //   ),
       // ),
+      body: Center(
+        child: Container(
+          decoration: BoxDecoration(border: Border.all(color: Colors.grey)),
+          child: CustomPaint(size: Size(300, 300), painter: MyPainter()),
+        ),
+      ),
     );
   }
 }
@@ -43,8 +43,10 @@ class MyPainter extends CustomPainter {
   void paint(Canvas canvas, Size size) {
     final path = Path()
       ..moveTo(50, 50)
-      ..lineTo(200, 200)
-      ..quadraticBezierTo(200, 20, 150, 100);
+      //..lineTo(200, 200)
+      // ..quadraticBezierTo(30, 150, 150, 100)
+      // ..quadraticBezierTo(270, 50, 240, 150);
+      ..cubicTo(30, 150, 270, 50, 240, 150);
     final paint = Paint()
       ..color = Colors.black
       ..style = PaintingStyle.stroke
